@@ -33,7 +33,7 @@
       justify-content: space-between;
     }
   
-    .button {
+    /* .button {
       padding: 10px 20px;
       font-size: 14px;
       cursor: pointer;
@@ -60,7 +60,7 @@
   
     .button:hover {
       opacity: 0.8;
-    }
+    } */
   </style>
   
   <div class="card">
