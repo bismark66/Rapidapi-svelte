@@ -1,20 +1,12 @@
 <!-- Button.svelte -->
-<script>
-    // Define props that can be passed to the component
-    export let variant = 'primary'; // Default variant
+<script lang="ts">
+    
+    export let variant = 'primary'; 
     export let disabled = false;
-    /**
-   * @type {() => void}
-   */
-     export let onClick;
-  
-    // Function to handle click event
-    function handleClick() {
-      if (onClick && !disabled) {
-        // console.log("clicked")
-        onClick();
-      }
-    }
+  //   /**
+  //  * @type {() => void}
+  //  */
+     export let onClick: ()=>void;
   
     // Determine class based on variant
     let buttonClass = 'button';
@@ -64,7 +56,7 @@
     }
   </style>
   
-  <button class={buttonClass} on:click={handleClick} {disabled}>
+  <button class={buttonClass} on:click={onClick} {disabled}>
     <slot></slot>
   </button>
   
