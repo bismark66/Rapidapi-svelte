@@ -10,7 +10,7 @@
  
   console.log(data);
 </script>
-<h1>This is the dynamic route: {$page.params.fruit}</h1>
+<h1>This is the dynamic rote: {$page.params.fruit}</h1>
 
 
 
