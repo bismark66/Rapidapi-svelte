@@ -11,7 +11,7 @@
 <!-- <h1>Welcome to SvelteKit this is Bismark</h1> -->
 <p>Visit <a href="/about">kit.svelte.dev</a> to read the document</p>
 
-<Button variant="danger" onClick={handleButtonClick}>Click me</Button>
+<Button variant="danger" onClick={handleButtonClick}>Click</Button>
 
 
 <Card title="Welcome Card" description="This is a sample card component with buttons.">
