@@ -9,7 +9,7 @@
   </script>
 
 <!-- <h1>Welcome to SvelteKit this is Bismark</h1> -->
-<p>Visit <a href="/about">kit.svelte.dev</a> to read the documentation</p>
+<p>Visit <a href="/about">kit.svelte.dev</a> to read the document</p>
 
 <Button variant="danger" onClick={handleButtonClick}>Click me!</Button>
 
