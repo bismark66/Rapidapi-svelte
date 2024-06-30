@@ -1,6 +1,7 @@
 <script lang="ts"> 
     import Button from '$lib/button.svelte';
     import Card from '$lib/card.svelte';
+    import {customStore} from '$lib/stores/store';
   
     // Define a function to handle button click
     function handleButtonClick() {
@@ -13,7 +14,12 @@ console.log(nam, " world")
 let count = 0;
 
 // reactive statement, used to triger a change from a different state unto what is passed to, it also run after all other scripts
+// it constantly look for a change on it dependencies
 $: doubled = count * 2;
+
+// In order to get or set data to a store, you prefix the variable with a $
+// $count="kogi"
+
 
 </script>
 
