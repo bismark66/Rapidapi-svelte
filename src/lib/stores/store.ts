@@ -2,21 +2,40 @@
 
 import { writable } from "svelte/store";
 
-function createCustomStore(initialValue: any) {
-  const { subscribe, set, update } = writable(initialValue);
+interface CustomStoreState {
+  payload: {
+    count: number;
+    message: string;
+  };
+  reset: () => void;
+  subscribe: () => void;
+}
 
-  function incrementCount() {
-    update((state) => ({
-      ...state,
-      count: state.count + 1,
-    }));
-  }
+interface Payload {
+  count: number;
+  message: string;
+}
+
+interface CustomStore {
+  set: (value: Payload) => void;
+  update: (updater: (value: Payload) => Payload) => void;
+  reset: () => void;
+  subscribe: (run: (value: Payload) => void) => () => void;
+}
+
+function createCustomStore(initialValue: Payload): CustomStore {
+  const { subscribe, set, update } = writable<Payload>(initialValue);
+
+  console.log(typeof initialValue);
+  const reset = () => {
+    set({ count: 0, message: "" });
+  };
 
   return {
-    subscribe,
     set,
     update,
-    incrementCount,
+    reset,
+    subscribe,
   };
 }
 

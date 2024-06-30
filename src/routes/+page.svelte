@@ -5,9 +5,15 @@
   
     // Define a function to handle button click
     function handleButtonClick() {
-      alert('Button clicked!');
+      // alert('Button clicked!');
+      $customStore.count += 1
+      console.log($customStore.count)
     }
 
+    function handleReset() {
+        customStore.reset()
+        console.log($customStore.count)
+    }
 
 export let nam:string="heello"
 console.log(nam, " world")
@@ -31,7 +37,7 @@ $: doubled = count * 2;
 <Card title="Welcome Card" description="This is a sample card component with buttons.">
     <!-- Pass Button components as slots -->
     <Button variant="primary" onClick={handleButtonClick}>Button 1</Button>
-    <Button variant="secondary" onClick={handleButtonClick}>Button 2</Button>
+    <Button variant="secondary" onClick={handleReset}>Reset Store</Button>
   </Card>
   
 
