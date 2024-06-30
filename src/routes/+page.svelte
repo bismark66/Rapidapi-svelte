@@ -23,11 +23,15 @@ let count = 0;
 // it constantly look for a change on it dependencies
 $: doubled = count * 2;
 
-// In order to get or set data to a store, you prefix the variable with a $
-// $count="kogi"
-
-
 </script>
+
+<style>
+:global(h1){
+    color: red
+}
+
+</style>
+
 
 <!-- <h1>Welcome to SvelteKit this is Bismark</h1> -->
 <p>Visit <a href="/about">kit.svelte.dev</a> to read the document</p>
