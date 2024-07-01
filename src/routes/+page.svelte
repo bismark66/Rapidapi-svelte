@@ -22,7 +22,20 @@ let count = 0;
 // reactive statement, used to triger a change from a different state unto what is passed to, it also run after all other scripts
 // it constantly look for a change on it dependencies
 $: doubled = count * 2;
+let value = 'Hello World';
 
+let files: FileList;
+  let imageUrl: string;
+
+  function handleFileChange() {
+    if (files && files.length > 0) {
+      const selectedFile = files[0];
+      console.log("Selected file:", selectedFile);
+
+      // Create a URL for the selected image
+      imageUrl = URL.createObjectURL(selectedFile);
+    }
+  }
 </script>
 
 <style>
@@ -31,6 +44,8 @@ $: doubled = count * 2;
 }
 
 </style>
+
+
 
 
 <!-- <h1>Welcome to SvelteKit this is Bismark</h1> -->
@@ -45,5 +60,18 @@ $: doubled = count * 2;
   </Card>
   
 
+  <input
+	on:input={() => console.log('Old value:', value)}
+	bind:value
+	on:input={() => console.log('New value:', value)}
+/>
 
 
+<input 
+  accept="image/png, image/jpeg" 
+  bind:files
+  id="avatar" 
+  name="avatar" 
+  type="file" 
+  on:change={handleFileChange} 
+/>
