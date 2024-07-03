@@ -89,7 +89,7 @@ let items=[{name:"food",qty:6},{name:"clothes",qty:4},{name:"toys",qty:3},{name:
 <!-- Rendering a list of items using each statement -->
 <h1>Shopping list</h1>
 <ul>
-	{#each items as item}
-		<li>{item.name} x {item.qty}</li>
+	{#each items as item, i}
+		<li style="list-style: none;">{i+1	 } - {item.name} x {item.qty}</li>
 	{/each}
 </ul>
