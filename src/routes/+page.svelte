@@ -39,6 +39,7 @@ let files: FileList;
   }
 
   let answer=42
+let items=[{name:"food",qty:6},{name:"clothes",qty:4},{name:"toys",qty:3},{name:"shoes",qty:2}]
 </script>
 
 <style>
@@ -83,3 +84,12 @@ let files: FileList;
 {#if answer === 42}
 	<p>what was the question?</p>
 {/if}
+
+
+<!-- Rendering a list of items using each statement -->
+<h1>Shopping list</h1>
+<ul>
+	{#each items as item}
+		<li>{item.name} x {item.qty}</li>
+	{/each}
+</ul>
