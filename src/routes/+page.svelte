@@ -34,8 +34,11 @@ let files: FileList;
 
       // Create a URL for the selected image
       imageUrl = URL.createObjectURL(selectedFile);
+      console.log("Image URL:", imageUrl);
     }
   }
+
+  let answer=42
 </script>
 
 <style>
@@ -75,3 +78,8 @@ let files: FileList;
   type="file" 
   on:change={handleFileChange} 
 />
+
+<!-- logic statement for rendering an output -->
+{#if answer === 42}
+	<p>what was the question?</p>
+{/if}
